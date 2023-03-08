@@ -4,6 +4,6 @@ main: tezla.plugin02.Plugin02
 api-version: 1.19
 description: Plugin02
 commands:
-  saludar:
+  chatgpt:
     description: Saluda a los jugadores
-    usage: /saludar
+    usage: /chatgpt
