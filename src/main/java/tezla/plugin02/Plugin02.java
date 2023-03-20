@@ -44,14 +44,14 @@ public final class Plugin02 extends JavaPlugin implements CommandExecutor {
                 Player player = (Player) sender;
 
                 String palabras = String.join(" ", args);
-
+                player.sendMessage("§a"+palabras);
                 // Hacemos la solicitud a la API
                 try {
                     URL url = new URL("https://api.openai.com/v1/completions");
                     HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                     conn.setRequestMethod("POST");
                     conn.setRequestProperty("Content-Type", "application/json");
-                    conn.setRequestProperty("Authorization", "Bearer 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");
+                    conn.setRequestProperty("Authorization", "Bearer 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");
                     conn.setDoOutput(true);
 
                     String jsonInputString = "{\"model\":\"text-davinci-003\",\"prompt\":\"" + palabras + "\",\"max_tokens\":30,\"temperature\":0}";
@@ -77,7 +77,7 @@ public final class Plugin02 extends JavaPlugin implements CommandExecutor {
                         String text = (String) choice.get("text");
 
 // Mostramos el valor de "text" en el chat
-                        player.sendMessage("§a"+palabras+"  §f"+text);
+                        player.sendMessage("§f"+text);
                     }
 
 
